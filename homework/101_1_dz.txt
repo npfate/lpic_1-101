@@ -1,7 +1,27 @@
 Перед выполнением заданий важно самостоятельно повторить шаги, выполняемые на уроке.
 
 1) Просмотреть информацию о процессоре и модулях оперативной памяти.
+lscpu
+lsmem
+cat /proc/cpuinfo
+cat /proc/meminfo
+inxi -Fzx
+
 2) Определить модель жесткого диска.
+cat /sys/block/sda/device/model
+
 3) Вывести сведения обо всех платах расширения на шине PCIEx.
+lspci
+
 4) Отключить звуковую карту.
+udevadm info /sys/class/sound/card0
+lsmod | grep sound
+modprobe -r soundcore
+modprobe -r snd
+rmmod snd
+
 5) Выключить контроллер usb.
+lsusb
+echo disabled | tee /sys/bus/usb/devices/4-3/power/wakeup
+echo suspend | tee /sys/bus/usb/devices/4-3/level
+
