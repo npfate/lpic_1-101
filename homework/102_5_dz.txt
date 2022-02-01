@@ -1,7 +1,38 @@
 Перед выполнением заданий важно самостоятельно повторить шаги, выполняемые на уроке.
 
 1) Добавить в репозитории информацию для работы с пакетом java.
+nano /etc/yum.repos.d/java.repo
+[java-stable]
+name=java stable repo
+baseurl=
+gpgcheck=1
+enabled=1
+gpgkey=
+module_hotfixes=
+
 2) Установить java со всеми зависимостями.
+dnf search openjdk
+sudo dnf install java-11-openjdk-devel
+
 3) Удалить java.
+dnf remove java-11-openjdk-devel
+
 4) Установить webmin.
+wget https://sourceforge.net/projects/webadmin/files/webmin/1.984/webmin-1.984-1.noarch.rpm
+rpm -i webmin-1.984-1.noarch.rpm
+
+или
+
+nano /etc/yum.repos.d/webmin.repo
+
+[Webmin]
+name=Webmin Distribution Neutral
+#baseurl=https://download.webmin.com/download/yum
+mirrorlist=https://download.webmin.com/download/yum/mirrorlist
+enabled=1
+
+rpm --import http://www.webmin.com/jcameron-key.asc
+dnf install webmin
+
 5) Обновить все пакеты ПО. 
+dnf update

@@ -1,7 +1,20 @@
 Перед выполнением заданий важно самостоятельно повторить шаги, выполняемые на уроке.
 
 1) Добавить в репозитории информацию для работы с пакетом java.
+nano /etc/apt/sources.list
+
+
 2) Установить java со всеми зависимостями.
+apt install default-jre
+apt install default-jdk
+
+
 3) Удалить java.
+apt remove default-jre
+apt remove default-jdk
+
 4) Установить webmin.
+apt install webmin
+
 5) Обновить все пакеты ПО. 
+apt update && apt upgrade -y
